@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Prompt Evaluator"
+            android:textColor="@color/primary"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Zero-Shot vs Few-Shot vs Structured Prompt"
+            android:textColor="@color/gray"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Task -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter LLM Task"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/etTask"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@drawable/bg_input"
+            android:gravity="top|start"
+            android:hint="Example: Explain machine learning in simple words"
+            android:inputType="textMultiLine"
+            android:padding="14dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray"
+            android:textSize="15sp" />
+
+        <!-- Evaluate Button -->
+
+        <Button
+            android:id="@+id/btnEvaluate"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_button"
+            android:text="EVALUATE PROMPTS"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <!-- Result title -->
+
+        <TextView
+            android:id="@+id/tvResultTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Evaluation Results"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Zero Shot Card -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. ZERO-SHOT PROMPT"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tvZeroPrompt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Prompt will appear here"
+                android:textColor="@color/gray"
+                android:textSize="13sp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/tvZeroResponse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Response will appear here"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/tvZeroScore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Score: --"
+                android:textColor="@color/orange"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp" />
+
+        </LinearLayout>
+
+        <!-- Few Shot Card -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. FEW-SHOT PROMPT"
+                android:textColor="@color/green"
+                android:textStyle="bold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tvFewPrompt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Prompt will appear here"
+                android:textColor="@color/gray"
+                android:textSize="13sp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/tvFewResponse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Response will appear here"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/tvFewScore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Score: --"
+                android:textColor="@color/orange"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp" />
+
+        </LinearLayout>
+
+        <!-- Structured Card -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. STRUCTURED PROMPT"
+                android:textColor="@color/primary"
+                android:textStyle="bold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tvStructuredPrompt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Prompt will appear here"
+                android:textColor="@color/gray"
+                android:textSize="13sp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/tvStructuredResponse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Response will appear here"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/tvStructuredScore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Score: --"
+                android:textColor="@color/orange"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp" />
+
+        </LinearLayout>
+
+        <!-- Comparison -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="QUALITY COMPARISON"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tvComparison"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enter a task and press Evaluate Prompts."
+                android:textColor="@color/gray"
+                android:textSize="14sp"
+                android:layout_marginTop="10dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
